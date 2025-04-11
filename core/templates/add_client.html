@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+<li class="breadcrumb-item"><a href="{% url 'clients' %}">Clients</a></li>
+<li class="breadcrumb-item active">Add Client</li>
+{% endblock %}
+{% block content %}
+<h3>Add New Client</h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+{% endblock %}

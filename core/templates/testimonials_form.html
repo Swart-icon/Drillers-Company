@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+<li class="breadcrumb-item"><a href="{% url 'testimonials' %}">Testimonials</a></li>
+<li class="breadcrumb-item active">Add Testimonial</li>
+{% endblock %}
+{% block content %}
+<h3>Submit a Testimonial</h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,37 @@
+ {{ form.non_field_errors }}
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">Project Name</label>
+            {{ form.name|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md'}) }}
+        </div>
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">Location</label>
+            {{ form.location|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md'}) }}
+        </div>
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">Start Date</label>
+            {{ form.start_date|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md', 'type': 'date'}) }}
+        </div>
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">End Date</label>
+            {{ form.end_date|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md', 'type': 'date'}) }}
+        </div>
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">Progress (%)</label>
+            {{ form.progress|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md', 'type': 'number'}) }}
+        </div>
+
+        <div>
+            <label class="block mb-1 text-blue-600 font-semibold">Status</label>
+            {{ form.status|as_widget(attrs={'class': 'w-full border border-gray-300 p-2 rounded-md'}) }}
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                Save Project
+            </button>
+        </div>

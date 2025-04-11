@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Staff Members</h3>
+<a href="{% url 'add_staff' %}" class="bg-blue-600 hover:bg-blue-700 text-black px-4 py-2 rounded-xl shadow-md">+ Add Staff Member</a>
+<table class="table table-sm table-bordered">
+    <thead><tr><th>Name</th><th>Role</th><th>Assigned Project</th></tr></thead>
+    <tbody>
+    {% for staff in staff %}
+    <tr><td>{{ staff.name }}</td><td>{{ staff.role }}</td><td>{{ staff.assigned_project }}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

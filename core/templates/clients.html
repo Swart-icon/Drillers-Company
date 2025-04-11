@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+<li class="breadcrumb-item active">Clients</li>
+{% endblock %}
+
+{% block content %}
+<h3>Clients</h3>
+<a href="{% url 'add_client' %}" class="btn btn-primary mb-3">Add New Client</a>
+
+<table class="table table-striped">
+    <thead><tr><th>Name</th><th>Email</th><th>Location</th></tr></thead>
+    <tbody>
+    {% for client in clients %}
+        <tr><td>{{ client.name }}</td><td>{{ client.email }}</td><td>{{ client.location }}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

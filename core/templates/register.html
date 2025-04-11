@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Uzima Borehole</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #edf6f9;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+        .register-conatiner{
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            color: #3aafa9;
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            width: 100%;
+            margin-bottom:15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            background-color: #3aafa9;
+            border: none;
+            padding: 10px;
+            color: #ff0000;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #2b7a78;
+        }
+        p{
+            text-align: center;
+        }
+        a{
+            color: #3aafa9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href={% url 'login' %}>Login Here</a></p>
+    </div>
+</body>
+</html>

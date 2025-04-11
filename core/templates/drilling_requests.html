@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Drilling Requests</h3>
+    <a href="{% url 'add_drilling_request' %}" class="btn btn-outline-primary">Add Drilling Request</a>
+<table class="table table-bordered">
+    <thead><tr><th>Client</th><th>Location</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for request in Drill %}
+    <tr><td>{{ request.client.name }}</td><td>{{ request.location }}</td><td>{{ request.status }}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

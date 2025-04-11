@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold text-blue-700 mb-6">Project Progress</h2>
+    <a href="{% url 'add_project' %}">+ Add New Project</a>
+        <a href="{% url 'add_project' %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl shadow-md">
+            + Add New Project
+        </a>
+    {% if projects %}
+        <div class="overflow-x-auto rounded-lg shadow">
+            <table >
+                <thead class="bg-blue-600 text-black">
+                    <tr>
+                        <th class="py-3 px-4 text-left">Project Name</th>
+                        <th class="py-3 px-4 text-left">Location</th>
+                        <th class="py-3 px-4 text-left">Start Date</th>
+                        <th class="py-3 px-4 text-left">End Date</th>
+                        <th class="py-3 px-4 text-left">Progress</th>
+                        <th class="py-3 px-4 text-left">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    {% for project in projects %}
+                        <tr class="border-b hover:bg-gray-100">
+                            <td class="py-2 px-4">{{ project.name }}</td>
+                            <td class="py-2 px-4">{{ project.location }}</td>
+                            <td class="py-2 px-4">{{ project.start_date }}</td>
+                            <td class="py-2 px-4">{{ project.end_date }}</td>
+                            <td class="py-2 px-4">{{ project.progress }}%</td>
+                            <td class="py-2 px-4">{{ project.status }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="text-center text-gray-600 mt-6">
+            <p>No projects added yet.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
